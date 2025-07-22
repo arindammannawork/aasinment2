@@ -6,7 +6,7 @@ import "@/style/AboutSection.scss";
 
 const AboutSection: React.FC = () => {
   return (
-    <section className="about-section">
+    <section className="about-section py-12">
       <div className="container">
         <div className="grid grid-cols-2 gap-4">
           <div className="left">
