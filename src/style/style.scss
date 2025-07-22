@@ -1,0 +1,413 @@
+@use "vars" as *;
+@use "mixins" as *;
+@import "tailwindcss";
+
+
+
+
+
+.hero-section {
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+
+    position: relative;
+    border-bottom: 1px solid #000;
+
+}
+
+.container {
+    @apply max-w-7xl mx-auto;
+}
+
+.hero-container {
+    @apply max-w-7xl mx-auto;
+    // max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    align-items: center;
+
+    @include breakpoint-up(sm) {
+        padding: 0 1.5rem;
+    }
+
+    @include breakpoint-up(lg) {
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+        padding: 0 2rem;
+    }
+
+    @include breakpoint-up(xl) {
+        gap: 6rem;
+    }
+}
+
+.left-content {
+    order: 2;
+
+    @include breakpoint-up(lg) {
+        order: 1;
+    }
+}
+
+.text-content {
+    margin-bottom: 3rem;
+
+    @include breakpoint-up(lg) {
+        margin-bottom: 4rem;
+    }
+}
+
+.main-heading {
+    font-size: 1.75rem;
+    font-weight: 300;
+    line-height: 1.2;
+    color: $text-dark;
+    margin-bottom: 1.5rem;
+
+    @include breakpoint-up(sm) {
+        font-size: 2.5rem;
+    }
+
+    @include breakpoint-up(md) {
+        font-size: 3rem;
+    }
+
+}
+
+.highlight {
+    color: $primary-blue;
+    font-weight: 700;
+    display: block;
+
+    @include breakpoint-up(lg) {
+        display: inline;
+    }
+}
+
+.description {
+    font-size: 1rem;
+    color: $text-gray;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+
+    @include breakpoint-up(md) {
+        font-size: 1.125rem;
+    }
+
+    @include breakpoint-up(lg) {
+        font-size: 1.25rem;
+        margin-bottom: 3rem;
+    }
+}
+
+.registration-section {
+    margin-bottom: 2rem;
+
+    @include breakpoint-up(lg) {
+        margin-bottom: 3rem;
+    }
+}
+
+.registration-title {
+    font-size: 1.125rem;
+    color: $text-dark;
+    margin-bottom: 1.5rem;
+    font-weight: 400;
+
+    @include breakpoint-up(md) {
+        font-size: 1.25rem;
+    }
+}
+
+.hybrid-text {
+    color: $accent-blue;
+    font-weight: 600;
+}
+
+.location-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+
+    @include breakpoint-up(sm) {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    @include breakpoint-up(md) {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    @include breakpoint-up(lg) {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+
+    @include breakpoint-up(xl) {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.location-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem;
+    border-radius: 6px;
+    transition: background-color 0.2s ease;
+
+    &:hover {
+        background-color: rgba(59, 130, 246, 0.1);
+    }
+}
+
+.flag {
+    font-size: 1.25rem;
+}
+
+.city-name {
+    font-size: 0.875rem;
+    color: $text-dark;
+    font-weight: 500;
+
+    @include breakpoint-up(lg) {
+        font-size: 0.9rem;
+    }
+}
+
+.filter-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    // justify-content: space-between;
+
+
+    @include breakpoint-up(md) {
+        gap: 3rem;
+    }
+}
+
+.filter-button {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1rem;
+    background: $white;
+    border: 2px solid #e5e7eb;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 0.875rem;
+
+    @include breakpoint-up(md) {
+        padding: .75rem 1.25rem;
+        font-size: 0.9rem;
+    }
+
+    &:hover {
+        border-color: $light-blue;
+        transform: translateY(-2px);
+
+    }
+}
+
+.filter-icon {
+    font-size: 1.5rem;
+}
+
+.filter-label {
+    font-weight: 500;
+    color: $text-dark;
+}
+
+.dropdown-icon {
+    color: $text-gray;
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+.right-content {
+    order: 1;
+    position: relative;
+
+    @include breakpoint-up(lg) {
+        order: 2;
+    }
+}
+
+.image-container {
+    position: relative;
+    height: 400px;
+    background-image: url('/images/img1.webp');
+
+    @include breakpoint-up(sm) {
+        height: 500px;
+    }
+
+    @include breakpoint-up(lg) {
+        height: 600px;
+    }
+}
+
+.background-shapes {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+}
+
+.blue-shape {
+    position: absolute;
+    top: 10%;
+    right: 0;
+    width: 60%;
+    height: 80%;
+    background: linear-gradient(135deg, $accent-blue 0%, $light-blue 100%);
+    border-radius: 20px;
+    z-index: 1;
+
+    @include breakpoint-up(lg) {
+        width: 70%;
+    }
+}
+
+.light-blue-shape {
+    position: absolute;
+    top: 0;
+    right: 10%;
+    width: 50%;
+    height: 60%;
+    background: linear-gradient(135deg, rgba(96, 165, 250, 0.3) 0%, rgba(147, 197, 253, 0.3) 100%);
+    border-radius: 20px;
+    z-index: 2;
+
+    @include breakpoint-up(lg) {
+        width: 60%;
+    }
+}
+
+.sparkle {
+    position: absolute;
+    top: 15%;
+    left: 20%;
+    width: 30px;
+    height: 30px;
+    background: $white;
+    border-radius: 50%;
+    z-index: 3;
+    animation: sparkle 2s ease-in-out infinite;
+
+    &::before,
+    &::after {
+        content: '';
+        position: absolute;
+        background: $white;
+    }
+
+    &::before {
+        top: 50%;
+        left: -8px;
+        right: -8px;
+        height: 2px;
+        transform: translateY(-50%);
+    }
+
+    &::after {
+        left: 50%;
+        top: -8px;
+        bottom: -8px;
+        width: 2px;
+        transform: translateX(-50%);
+    }
+}
+
+@keyframes sparkle {
+
+    0%,
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.7;
+        transform: scale(1.1);
+    }
+}
+
+.person-image {
+    position: absolute;
+    top: 10%;
+    left: 0;
+    z-index: 4;
+    width: 70%;
+    height: 80%;
+
+    @include breakpoint-up(lg) {
+        width: 60%;
+    }
+}
+
+.student-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+
+
+
+
+
+
+.social-links {
+    position: absolute;
+    // right: -2rem;
+    right: -140px;
+
+    top: 50%;
+    transform: translateY(-50%) rotate(90deg);
+    display: none;
+
+    @include breakpoint-up(xl) {
+        display: flex;
+        gap: 1.5rem;
+    }
+}
+
+.social-link {
+    font-size: 0.75rem;
+    color: $text-gray;
+    text-decoration: none;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    transition: color 0.2s ease;
+
+    &:hover {
+        color: $accent-blue;
+    }
+}
+
+.register-course {
+    h3 {
+        font-size: 1.25rem;
+        font-weight: 600;
+        color: $accent-blue;
+    }
+
+    .location {
+        .flag {
+            img {
+                width: 14px;
+            }
+        }
+
+        .country {
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: $primary-blue;
+        }
+    }
+}

@@ -1,0 +1,64 @@
+@use "vars" as *;
+@use "mixins" as *;
+@import "tailwindcss";
+
+.section-heading {
+    h3 {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+
+
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: $accent-blue;
+
+        img {
+            width: 16px;
+        }
+    }
+
+    p {
+        font-size: 2.25rem;
+        font-weight: 700;
+        color: $primary-blue ;
+    }
+}
+
+.about-section {
+    .right {
+        .content {
+            p {
+                font-size: 1rem;
+                color: $text-gray;
+                line-height: 1.5;
+            }
+
+            .points {
+                display: flex;
+                align-items: center;
+                gap: 12px;
+
+                .icon {
+                    width: 50px;
+                    flex-shrink: 0;
+                }
+
+                .text-box {
+                    h4 {
+                        font-size: 1.5rem;
+                        font-weight: 700;
+                        color: $text-dark;
+                    }
+
+                    p {
+                        font-size: 1rem;
+                        color: $text-gray;
+                        line-height: 1.5;
+                    }
+                }
+            }
+        }
+
+    }
+}
